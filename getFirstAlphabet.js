@@ -26,6 +26,8 @@ function makePy(str) {
 }
 
 function checkCh(ch){
+    if(ch === "")
+        return "#"
     var uni = ch.charCodeAt(0);
 //如果不在汉字处理范围之内,返回原字符,也可以调用自己的处理函数
     if(uni > 40869 || uni < 19968)
