@@ -147,6 +147,13 @@ export default class SectionListModule extends Component {
 
     filterData() {
         var data = _.cloneDeep(this.state.dataArray);
+	this.props.sectionListData.sort((a, b) => {
+            if(a.familyName + a.givenName > b.familyName + b.givenName) {
+                return 1
+            } else if(a.familyName + a.givenName < b.familyName + b.givenName) {
+                return -1;
+            }
+        })
         this.props.sectionListData.map((item, index) => {
             for (let i = 0; i < data.length; i++) {
                 if (i == data.length - 1) {
